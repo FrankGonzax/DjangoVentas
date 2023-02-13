@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registro</title>
+        <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+
+    <body>
+        <div class="cont_reg">
+            <form action="{% url 'ventas:save' %}" method="post">
+                {% csrf_token %}
+                {% if error_message %}
+                    <p>{{ error_message }}</p>
+                {% endif %}
+                <div class="div0">
+                    <label>Documento de Identidad:</label>
+                    <input type="text" name="doc">
+                </div>
+                <div class="div0">
+                    <label>Apellidos y Nombres:</label>
+                    <input type="text" name="nam">
+                </div>
+                <div class="div0">
+                    <label>Correo Electronico:</label>
+                    <input type="text" name="email">
+                </div>
+                <div class="div0">
+                    <label>Monto Recibido:</label>
+                    <input type="number" name="monto">
+                </div>
+                <div class="div0">
+                    <button class="but">Registrar</button>
+                </div>
+            </form>
+            <div class="div0">
+                <a href="{% url 'ventas:index' %}"><button class="but">Regresar</button></a>
+            </div>
+        </div>
+
+    </body>
+
+    </html>

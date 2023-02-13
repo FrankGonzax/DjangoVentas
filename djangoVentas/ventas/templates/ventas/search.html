@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Busqueda</title>
+        <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+
+    <body>
+        <div class="cont_cons" id="cont_cons">
+            <div>
+                <h2 class="tx">Filtros (Documento de Identidad):</h1>
+                <form action="{% url 'ventas:searchperson' %}" method="post">
+                    {% csrf_token %}
+                    {% if error_message %}
+                        <p>{{ error_message }}</p>
+                    {% endif %}
+                    <input type="text" name="doc">
+                    <button class="b_con">Buscar</button>
+                </form>
+                <a  href = "{% url 'ventas:index' %}"><button class="b_con">Regresar</button></a>
+            </div>
+            <div>
+                <table class="table">
+                    <tr class="ex">
+                        <td class="t1">Documento de Identidad</td>
+                        <td class="t2">Apellidos y Nombres</td>
+                        <td class="t3">Correo Electronico</td>
+                    </tr>
+                    {% if lista_personas %}
+                        {% for person in lista_personas %}
+                            <tr class="ex">
+                                <td class="t1">{{ person.document }}</td>
+                                <td class="t2">{{ person.name }}</td>
+                                <td class="t3">{{ person.mail }}</td>
+                            </tr>
+                        {% endfor %}
+                    {% else %}
+                        <p>No se encontraron resultados.</p>
+                    {% endif %}
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

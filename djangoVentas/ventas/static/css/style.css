@@ -1,0 +1,122 @@
+body{
+    background-color: #3705A9;
+}
+.cont_reg{
+    display: block;
+}
+.title{
+    color: white;
+    text-align: center;
+    font-size: 50px;
+}
+
+.cont{
+    margin-top: 100px;
+    margin-left: 100px;
+}
+
+.b{
+    cursor: pointer;
+    margin: 30px;
+    background-color: aqua;
+}
+
+.im{
+    width: 350px;
+    background-color: aqua;
+}
+
+.b:hover{
+    background-color: #125BA8;
+    transition: 2s;
+}
+.im:hover{
+    background-color: #125BA8;
+    transition: 2s;
+}
+
+
+/*Registro*/
+.cont_reg{
+    color: white;
+    margin-left: 35%;
+    border: solid;
+    border-color: white;
+    border-radius: 10px;
+    width: 500px;
+    font-size: 20px;
+}
+.div0{
+    margin-top: 20px;
+    margin-left: 10px;
+}
+.but{
+    width: 200px;
+    height: 50px;
+    color: white;
+    border-radius: 10px;
+    background-color: #09CB50;
+    margin-left: 110px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+.but:hover{
+    background-color: aqua;
+    transition: 2s;
+}
+
+/*CONSULTAS*/
+.cont_cons{
+    color: white;
+}
+.tx{
+    display: inline-block;
+}
+.b_con{
+    font-size: 20px;
+    width: 150px;
+    height: 30px;
+    background-color: #09CB50;
+    color: white;
+    border-radius: 10px;
+    margin-left: 30px;
+    cursor: pointer;
+}
+.b_con:hover{
+    background-color: aqua;
+    transition: 2s;
+}
+.table{
+    width: 100%;
+}
+
+.ex{
+    border: solid;
+    border-color: white;
+}
+
+.t1{
+    border-left: solid;
+    border-right: none;
+    border-color: white;
+}
+.t2{
+    border-left: solid;
+    border-right: none;
+    border-color: white;
+}
+.t3{
+    border-left: solid;
+    border-right: none;
+    border-color: white;
+}
+.t4{
+    border-left: solid;
+    border-right: none;
+    border-color: white;
+}
+.t5{
+    border-left: solid;
+    border-right: solid;
+    border-color: white;
+}

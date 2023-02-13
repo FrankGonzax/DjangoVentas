@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Busqueda</title>
+        <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+
+    <body>
+        <div class="cont_cons" id="cont_cons">
+            <div>
+                <form action="{% url 'ventas:searchperson' %}" method="post">
+                    {% csrf_token %}
+                    {% if  error_message %}
+                        <p>{{error_message}}</p>
+                    {% endif %}
+                    <h2 class="tx">Filtros (Documento de Identidad):</h1>
+                    <input type="text" name="doc">
+                    <button class="b_con">Buscar</button>
+                </form>
+                <a  href = "{% url 'ventas:search' %}"><button class="b_con">Regresar</button></a>
+            </div>
+            <div>
+                <table class="table">
+                    <tr class="ex">
+                        <td class="t1">Documento de Identidad</td>
+                        <td class="t4">Monto</td>
+                        <td class="t5">Fecha</td>
+                    </tr>
+                    {% if lista_ventas  %}
+                        {% if doc %}
+                            {% for venta in lista_ventas %}
+                                <tr class="ex">
+                                    <td class="t1">{{ doc }}</td>
+                                    <td class="t2">{{ venta.amount }}</td>
+                                    <td class="t3">{{ venta.date }}</td>
+                                </tr>
+                            {% endfor %}
+                        {% else %}
+                            <p>No se encontraron resultados.</p>
+                        {% endif %}
+                    {% else %}
+                        <p>No se encontraron resultados.</p>
+                    {% endif %}
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

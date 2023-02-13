@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Inicio</title>
+        <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <h1 class="title" id="title">Inicio</h1>
+        <div class="cont" id="cont">
+            <a href = "{% url 'ventas:registrar' %}"><button class="b"><img src="https://cdn-icons-png.flaticon.com/512/2910/2910768.png"  class="im"></button></a>
+            <a href = "{% url 'ventas:search' %}"><button class="b"><img src="https://cdn-icons-png.flaticon.com/512/3143/3143073.png"  class="im"></button></a>
+            <button class="b" onclick="abrir_resumen()"><img src="https://cdn-icons-png.flaticon.com/512/3121/3121571.png"  class="im"></button>
+        </div>
+    </body>
+</html>
